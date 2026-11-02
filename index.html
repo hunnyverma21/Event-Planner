@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evently - Event Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">✦ Evently</div>
+    <button class="primary" id="newEventBtn">+ New Event</button>
+  </header>
+  <main>
+    <h1>Event Dashboard</h1>
+    <p class="muted">Plan smarter. Celebrate better.</p>
+    <section class="stats">
+      <div class="card">Total Events<div class="number" id="total">0</div></div>
+      <div class="card">Upcoming Events<div class="number" id="upcoming">0</div></div>
+      <div class="card">Total Budget<div class="number" id="budget">₹0</div></div>
+    </section>
+    <div class="toolbar">
+      <input id="search" placeholder="Search events..." aria-label="Search events">
+      <select id="filter" aria-label="Filter by category">
+        <option value="All">All Events</option>
+        <option>Birthday</option><option>Wedding</option><option>Party</option>
+        <option>Corporate</option><option>Other</option>
+      </select>
+      <button class="primary" id="createEventBtn">+ Create Event</button>
+    </div>
+    <h2>Your Events</h2>
+    <section class="events" id="events"></section>
+  </main>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button class="close" id="closeBtn" aria-label="Close">✕</button>
+      <h2 id="modalTitle">Create New Event</h2>
+      <form id="eventForm">
+        <input type="hidden" id="editId">
+        <label for="name">Event Name</label>
+        <input id="name" required placeholder="e.g. Birthday Celebration">
+        <label for="category">Event Category</label>
+        <select id="category">
+          <option>Birthday</option><option>Wedding</option><option>Party</option>
+          <option>Corporate</option><option>Other</option>
+        </select>
+        <label for="date">Date</label><input type="date" id="date" required>
+        <label for="time">Time</label><input type="time" id="time">
+        <label for="venue">Venue</label><input id="venue" placeholder="Enter venue">
+        <label for="guests">Number of Guests</label><input type="number" id="guests" min="0" placeholder="50">
+        <label for="cost">Estimated Budget (₹)</label><input type="number" id="cost" min="0" placeholder="10000">
+        <label for="notes">Tasks / Notes</label><textarea id="notes" rows="3" placeholder="Decoration, catering, invitations..."></textarea>
+        <button class="primary submit" type="submit">Save Event</button>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f5f5fa; color: #24243a; font-family: Arial, sans-serif; }
+header { background: #fff; padding: 20px 7%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+.logo { font-size: 25px; font-weight: 800; color: #7055db; }
+button { border: 0; border-radius: 9px; padding: 11px 17px; cursor: pointer; font-weight: bold; }
+button:hover { filter: brightness(.96); }
+.primary { background: #7055db; color: white; }
+main { max-width: 1100px; margin: 35px auto; padding: 0 20px; }
+h1 { margin-bottom: 5px; }
+.muted { color: #85859a; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 25px 0; }
+.card { background: white; padding: 22px; border-radius: 15px; box-shadow: 0 3px 15px #20204008; }
+.number { font-size: 29px; font-weight: bold; margin-top: 12px; }
+.toolbar { display: flex; justify-content: space-between; gap: 10px; margin: 25px 0; flex-wrap: wrap; }
+input, select, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 8px; background: white; font: inherit; }
+#search { flex: 1; min-width: 150px; }
+.events { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.event { background: white; padding: 20px; border-radius: 14px; border-left: 5px solid #7055db; overflow-wrap: anywhere; }
+.event h3 { margin: 0 0 10px; }
+.event p { color: #777; font-size: 14px; }
+.actions { display: flex; gap: 8px; margin-top: 15px; }
+.delete { background: #fff0f0; color: #d44; }
+.edit { background: #eeeaff; color: #7055db; }
+.modal { display: none; position: fixed; inset: 0; background: #0007; align-items: center; justify-content: center; padding: 15px; z-index: 2; }
+.modal-box { background: white; padding: 25px; border-radius: 16px; width: 100%; max-width: 440px; max-height: 90vh; overflow: auto; }
+.modal-box label { display: block; font-size: 13px; font-weight: bold; margin-top: 8px; }
+.modal-box input, .modal-box select, .modal-box textarea { width: 100%; margin: 7px 0 10px; }
+.close { float: right; background: #eee; }
+.submit { width: 100%; margin-top: 8px; }
+.empty { text-align: center; padding: 50px; color: #888; background: white; border-radius: 15px; grid-column: 1 / -1; }
+@media (max-width: 650px) {
+  .stats { grid-template-columns: 1fr; }
+  .events { grid-template-columns: 1fr; }
+  header { padding: 18px; }
+  .toolbar { flex-direction: column; }
+  #search { width: 100%; }
+}
